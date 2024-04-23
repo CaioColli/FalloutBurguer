@@ -1,0 +1,307 @@
+section {
+    align-items: center;
+    display: flex;
+    /* height: 1080px; */
+    height: 100vh;
+    justify-content: space-between;
+
+    .leftSide {
+        font-family: "Rosario";
+        max-width: 450px;
+        padding-left: 12%;
+
+        h5 {
+            color: #CE1F26;
+            font-size: 24px;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-style: italic;
+            font-weight: 500;
+            margin: 0;
+            padding: 16px 0;
+        }
+
+        p {
+            color: #8D8D8D;
+        }
+
+        .btns {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+
+            .btn-addCard, .btn-GoToMenu {
+                cursor: pointer;
+                font-family: "Roboto";
+                font-weight: bold;
+            }
+
+            .btn-addCard {
+                background-color: #000000;
+                border-radius: 10px;
+                color: #ffff;
+                height: 39px;
+                padding: 10px 24px;
+                width: auto;
+            }
+
+            .btn-GoToMenu {
+                background-color: transparent;
+                border: none;
+                color: #CE1F26;
+            }
+        }
+    }
+
+    .rightSide {
+        background-color: #FDF3F4;
+        height: 100%;
+        position: relative;
+
+        .div-burguerImage {
+            position: relative;
+            right: 50%;
+            top: 20%;
+            
+            .burguerImage {
+                position: relative;
+                z-index: 1;
+            }
+
+            .shadowBurguer {
+                position: absolute;
+                right: 12%;
+                top: 95%;
+                z-index: 0;
+            }
+
+            .traceBurguer {
+                position: absolute;
+                right: 95%;
+                top: 33%;
+                z-index: 2;
+            }
+
+            .priceBurguer {
+                align-items: center;
+                background-color: #ffff;
+                border-radius: 25px;
+                border: 1px solid #8D8D8D;
+                box-shadow: 10px 6px 2px 0 rgba(0, 0, 0, 0.5);
+                display: flex;
+                height: 100px;
+                justify-content: center;
+                position: absolute;
+                right: 75%;
+                top: 70%;
+                width: 230px;
+                z-index: 2;
+
+                .price {
+                    p, h3 {
+                        font-weight: bold;
+                    }
+        
+                    h3 {
+                        color: #CE1F26;
+                        font-size: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Large Desktop */
+@media screen and (min-width: 1367px) and (max-width: 1700px) {
+    section {
+        .rightSide {
+            .div-burguerImage {
+                top: 30%;
+                .burguerImage {
+                    width: 400px;
+                }
+
+                .shadowBurguer {
+                    width: 300px;
+                }
+
+                .traceBurguer {
+                    width: 60px;
+                    height: 133px;
+                }
+
+                .priceBurguer {
+                    height: 80px;
+                    width: 170px;
+    
+                    .price {
+                        h3 {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Small Desktop */
+@media screen and  (min-width: 1281px) and (max-width: 1366px) {
+    section {
+        .leftSide {
+            h5 {
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+        }
+
+        .rightSide {
+            .div-burguerImage {
+                top: 30%;
+                .burguerImage {
+                    width: 350px;
+                }
+
+                .shadowBurguer {
+                    width: 250px;
+                }
+
+                .traceBurguer {
+                    width: 50px;
+                    height: 115px;
+                }
+
+                .priceBurguer {
+                    height: 60px;
+                    width: 120px;
+    
+                    .price {
+                        h3 {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 1000px) and (max-width: 1280px) {
+    section {
+        .leftSide {
+            max-width: 400px;
+            padding-left: 10%;
+
+            h5 {
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+        }
+
+        .rightSide {
+            .div-burguerImage {
+                top: 30%;
+                .burguerImage {
+                    width: 300px;
+                }
+
+                .shadowBurguer {
+                    width: 250px;
+                }
+
+                .traceBurguer {
+                    width: 40px;
+                    height: 100px;
+                }
+
+                .priceBurguer {
+                    height: 60px;
+                    width: 120px;
+    
+                    .price {
+                        h3 {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* lying down SmartPhone */
+@media screen and (min-width: 501px) and (max-width: 999px) {
+    
+}
+
+/* SmartPhone */
+@media screen and  (min-width: 360px) and (max-width: 500px) {
+    section {
+        flex-direction: column;
+        justify-content: start;
+
+        .leftSide {
+            order: 2;
+            max-width: 340px;
+            padding: 24px 5px 0 5px;
+
+            h5 {
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .btns {
+                justify-content: center;
+                margin-top: 24px;
+            }
+        }
+
+        .rightSide {
+            background-color: transparent;
+            height: auto;
+            order: 1;
+
+            .div-burguerImage {
+                top: 0;
+                right: 0;
+
+                .burguerImage {
+                    width: 250px;
+                }
+
+                .shadowBurguer {
+                    width: 150px;
+                }
+
+                .traceBurguer {
+                    display: none;
+                }
+
+                .priceBurguer {
+                    height: 60px;
+                    width: 120px;
+                    right: 65%;
+    
+                    .price {
+                        h3 {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
