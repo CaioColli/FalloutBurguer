@@ -16,9 +16,9 @@ export const HomePageComponents = ({tittleBurguer, descriptionBurguer, priceBurg
 
             <div className="rightSide">
                 <div className="div-burguerImage">
-                    <img src="images/ImagemHamburguer.png" alt="Foto de um hamburguer" className="burguerImage"></img>   
-                    <img src="images/SombraHamburguer.svg" alt="Sombra do hamburguer" className="shadowBurguer"></img>
-                    <img src="images/TraçadoHamburguer.svg" alt="Traçado do hamburguer para o preço" className="traceBurguer"></img>
+                    <img src="Images/ImagemHamburguer.png" alt="Foto de um hamburguer" className="burguerImage"></img>   
+                    <img src="Images/SombraHamburguer.svg" alt="Sombra do hamburguer" className="shadowBurguer"></img>
+                    <img src="Images/TraçadoHamburguer.svg" alt="Traçado do hamburguer para o preço" className="traceBurguer"></img>
 
                     <div className='priceBurguer'>
                         <div className='price'>
