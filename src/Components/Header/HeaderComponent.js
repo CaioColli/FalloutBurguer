@@ -1,10 +1,11 @@
-import './Component.css'
+import './Header.css'
 import { CiShoppingCart } from "react-icons/ci";
 import { GoSun } from "react-icons/go";
 import { FaCircle } from "react-icons/fa";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 
 export const HeaderComponent = ({itemOne, itemTwo, itemThree, itemFour}) => {
+
     return (
         <div className='header-content'>
             

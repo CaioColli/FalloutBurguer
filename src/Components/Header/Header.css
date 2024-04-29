@@ -20,8 +20,41 @@
         display: flex;
         gap: 48px;
         list-style-type: none;
+
         li {
+            cursor: pointer;
+            position: relative;
             font-family: "Rosario";
+
+            &::before {
+                background-color: #CE1F26;
+                bottom: -5px;
+                content: '';
+                height: 4px;
+                position: absolute;
+                left: 50%;
+                transition: width 0.3s;
+                width: 0;
+            }
+
+            &:hover::before {
+                width: 25%;
+            }
+
+            &::after {
+                background-color: #CE1F26;
+                bottom: -5px;
+                content: '';
+                height: 4px;
+                position: absolute;
+                right: 50%;
+                transition: width 0.3s;
+                width: 0;
+            }
+
+            &:hover::after {
+                width: 25%;
+            }
         }
     }
     
@@ -39,6 +72,11 @@
             cursor: pointer;
             display: flex;
             justify-content: center;
+            transition: 0.5s ease;
+
+            &:hover {
+                scale: 1.1;
+            }
         }
 
         .btn-darkMode {
