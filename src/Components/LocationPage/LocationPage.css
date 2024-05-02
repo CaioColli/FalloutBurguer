@@ -1,5 +1,240 @@
-.teste {
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(255, 0, 0, 0.219);
+.locationPage {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    .onion, .sheet, .burguer, .bacon {
+        position: absolute;
+    }
+
+    .onion {
+        top: 0;
+    }
+
+    .sheet {
+        top: 0;
+        right: 0;
+    }
+
+    .burguer {
+        bottom: 0;
+    }
+
+    .bacon {
+        bottom: 0;
+        right: 0;
+    }
+
+    .leftSide-locationPage {
+        width: 100%;
+        .content-leftSide {
+            max-width: 521px;
+            margin-left: 25%;
+
+            h1 {
+                margin: 0;
+                font-size: 4rem;
+                color: #CE1f26;
+            }
+            
+            p {
+                font-size: 1.5rem;
+                font-weight: bold;
+                padding: 24px 0;
+            }
+    
+            button {
+                background: #000;
+                border-radius: 10px;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+                height: 50px;
+                width: 180px;
+                transition: 1s;
+
+                &:hover {
+                    scale: 1.05;
+                }
+            }
+        }
+
+    } 
+
+    .rightSide-locationPage {
+        .content-rightSide {
+            margin-right: 120px;
+            position: relative;
+            width: auto;
+
+            .map {
+                width: auto;
+                height: auto;
+            }
+
+            .circleMap {
+                cursor: pointer;
+            }
+
+            .circleMapAnimation {
+                fill: #f89fa2;
+            }
+        }
+    }
+}
+
+/* SmartPhone */
+@media screen and (min-width: 360px) and (max-width: 800px) {
+    .onion, .sheet, .burguer, .bacon {
+        display: none;
+    }
+
+    .locationPage {
+        justify-content: center;
+        margin: 0;
+        padding: 60px 0;
+
+        .leftSide-locationPage {
+            margin-bottom: 64px;
+            
+            .content-leftSide {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+                h1 {
+                    margin: 0;
+                    font-size: 1.5rem;
+                    color: #CE1f26;
+                }
+                
+                p {
+                    font-size: 1rem;
+                    font-weight: bold;
+                    padding: 24px 0;
+                }
+            }
+        }
+
+        .rightSide-locationPage {
+            .content-rightSide {
+                margin: 0;
+    
+                .map {
+                    width: 340px;
+                }
+            }
+        }
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 800px) and (max-width: 1280px) {
+    .onion, .sheet, .burguer, .bacon {
+        display: none;
+    }
+
+    .locationPage {
+        justify-content: center;
+        margin-top: 120px;
+
+        .leftSide-locationPage {
+            width: 100%;
+            margin-bottom: 64px;
+            
+            .content-leftSide {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                max-width: 100%;
+                h1 {
+                    margin: 0;
+                    font-size: 2.5rem;
+                    color: #CE1f26;
+                }
+                
+                p {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    padding: 24px 0;
+                }
+            }
+        }
+
+        .rightSide-locationPage {
+            .content-rightSide {
+                margin: 0;
+    
+                .map {
+                    width: 646px;
+                }
+            }
+        }
+    }
+}
+
+/* Small Desktop */
+@media screen and (min-width: 1280px) and (max-width: 1366px) {
+    .locationPage {
+        .leftSide-locationPage {
+            width: 100%;
+            .content-leftSide {
+                h1 {
+                    margin: 0;
+                    font-size: 2.5rem;
+                    color: #CE1f26;
+                }
+                
+                p {
+                    font-size: 1rem;
+                    font-weight: bold;
+                    padding: 24px 0;
+                }
+            }
+        } 
+    }
+
+    .rightSide-locationPage {
+        .content-rightSide {
+            margin-right: 120px;
+
+            .map {
+                width: 646px;
+            }
+        }
+    }
+}
+
+/* Medium Desktop */
+@media screen and (min-width: 1366px) and (max-width: 1700px) {
+    .locationPage {
+        .leftSide-locationPage {
+            width: 100%;
+            .content-leftSide {
+                h1 {
+                    margin: 0;
+                    font-size: 2.5rem;
+                    color: #CE1f26;
+                }
+                
+                p {
+                    font-size: 1rem;
+                    font-weight: bold;
+                    padding: 24px 0;
+                }
+            }
+        } 
+    }
+
+    .rightSide-locationPage {
+        .content-rightSide {
+            margin-right: 120px;
+
+            .map {
+                width: 646px;
+            }
+        }
+    }
 }

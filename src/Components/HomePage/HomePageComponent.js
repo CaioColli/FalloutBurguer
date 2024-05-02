@@ -2,7 +2,7 @@ import './HomePage.css'
 import { useEffect } from 'react'
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { animationAddToBag } from '../LocationPage/LocationPageComponent'
+import { animationAddToBag } from '../MenuPage/MenuPageComponent'
 import { CiShoppingCart } from "react-icons/ci"
 import { PiHamburger } from "react-icons/pi"
 import { GiPaperBagOpen } from "react-icons/gi"
@@ -56,36 +56,41 @@ export const HomePageComponents = ({tittleBurguer, descriptionBurguer, priceBurg
     return (
         <section className='homePage'>
 
-            <div className="leftSide">
-                <h5>DESCUBRA NOVOS SABORES!</h5>
-                <h1>Especial {tittleBurguer} </h1>
-                <p> {descriptionBurguer} </p>
-                
-                <div className="btns">
-                    <button className='btn-addCard' onClick={ animationAddToBag }> 
-                        <CiShoppingCart className='iconAddCart' />
-                        <GiPaperBagOpen className='iconBagOpen' />
-                        <PiHamburger className='iconHamburger' />
-                        <GiPaperBagFolded className='iconBagFolded' />
-                        <RiEBike2Line className='iconBike' />
-                    </button>
-                    <button className='btn-GoToMenu'>Cardápio</button>
+            <div className="leftSide-homePage">
+                <div className='content-leftSide'>
+                    <h5>DESCUBRA NOVOS SABORES!</h5>
+                    <h1>Especial {tittleBurguer} </h1>
+                    <p> {descriptionBurguer} </p>
+               
+                    <div className="btns">
+                        <button className='btn-addCard' onClick={ animationAddToBag }> 
+                            <CiShoppingCart className='iconAddCart' />
+                            <GiPaperBagOpen className='iconBagOpen' />
+                            <PiHamburger className='iconHamburger' />
+                            <GiPaperBagFolded className='iconBagFolded' />
+                            <RiEBike2Line className='iconBike' />
+                        </button>
+                        <button className='btn-GoToMenu'>Cardápio</button>
+                    </div>
                 </div>
+                
             </div>
 
-            <div className="rightSide">
-                <div className="div-burguerImage">
-                    <div className='content-burguerImage'>
-                        <img src="Images/ImagemHamburguer.png" alt="Foto de um hamburguer" className="burguerImage"></img>   
-                        <img src="Images/SombraHamburguer.svg" alt="Sombra do hamburguer" className="shadowBurguer"></img>
-                        <img src="Images/TraçadoHamburguer.svg" alt="Traçado do hamburguer para o preço" className="traceBurguer"></img>
+            <div className="rightSide-homePage">
+                <div className='content-rightSide'>
+                    <div className="div-burguerImage">
+                        <div className='content-burguerImage'>
+                            <img src="Images/ImagemHamburguer.png" alt="Foto de um hamburguer" className="burguerImage"></img>   
+                            <img src="Images/SombraHamburguer.svg" alt="Sombra do hamburguer" className="shadowBurguer"></img>
+                            <img src="Images/TraçadoHamburguer.svg" alt="Traçado do hamburguer para o preço" className="traceBurguer"></img>
 
-                        <div className='priceBurguer'>
-                            <div className='price'>
-                                <p>Apenas</p>
-                                <h3> {priceBurguer} </h3>
-                            </div>
-                        </div> 
+                            <div className='priceBurguer'>
+                                <div className='price'>
+                                    <p>Apenas</p>
+                                    <h3> {priceBurguer} </h3>
+                                </div>
+                            </div> 
+                        </div>
                     </div>
                 </div>
             </div>

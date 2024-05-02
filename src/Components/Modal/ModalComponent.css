@@ -1,0 +1,205 @@
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    /* display: none; */
+}
+
+.modal {
+    align-items: center;
+    background-color: #FDF3F4;
+    border-radius: 15px;
+    display: flex;
+    height: 422px;
+    justify-content: center;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    z-index: 1000;
+
+    .content-modal {
+        align-items: center;
+        background-color: #fff;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        height: 390px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        width: 968px;
+        .content-fixed {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+
+        .icon-close {
+            cursor: pointer;
+            height: 50px;
+            margin-left: auto;
+            transition: 1s;
+            width: 50px;
+
+            &:hover {
+                scale: 1.1;
+            }
+        }
+
+        input {
+            margin-top: 24px;
+            width: 336px;
+            height: 37px;
+            text-align: center;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 0, 0, 0.5);
+        }
+
+        .icon-burguer {
+            margin-top: 64px;
+            width: 90px;
+        }
+
+        .about-restaurant {
+            display: flex;
+            padding: 24px 0;
+            
+            div {
+                margin-left: 24px;
+                .icon {
+                    color: rgba(0, 0, 0, 0.5);
+                    height: 24px;
+                    margin-right: 8px;
+                    width: 24px;
+                }
+
+                h1 {
+                    font-size: 2.5rem;
+                    font-weight: 300;
+                    margin: 0;
+                }
+
+                p {
+                    align-items: center;
+                    color: rgba(0, 0, 0, 0.5);
+                    display: flex;
+                    font-size: 1rem;
+                    font-weight: bold;
+
+                    &:nth-of-type(1){
+                        padding: 8px 0;
+                    }
+                }
+
+                .map {
+                    border-radius: 15px;
+                    border: none;
+                    cursor: pointer;
+                    height: 100px;
+                    margin-top: 16px;
+                    width: 161px;
+                }
+            }
+        }
+    }
+}
+
+/* SmartPhone */
+@media screen and (min-width: 360px) and (max-width: 799px) {
+    .modal {
+        height: 530px;
+        max-width: 300px;
+        top: 40%;
+        
+        .content-modal {
+            height: 498px;
+            max-width: 268px;
+            overflow-y: scroll;
+
+            input {
+                max-width: 250px;
+            }
+
+            .icon-burguer {
+                max-width: 60px;
+            }
+
+            .about-restaurant {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                padding-top: 24px;
+
+                img {
+                    width: 250px;
+                }
+
+                div {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0;
+                    margin-top: 24px;
+
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+
+                    .map {
+                        max-width: 140px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 800px) and (max-width: 1280px) {
+    .modal {
+        max-height: 380px;
+        max-width: 740px;
+        top: 30%;
+        
+        .content-modal {
+            max-height: 348px;
+            max-width: 708px;
+            overflow-y: scroll;
+
+            input {
+                font-size: 1.5rem;
+            }
+
+            .about-restaurant {
+                img {
+                    width: 250px;
+                }
+
+                div {
+                    align-items: start;
+                    display: flex;
+                    flex-direction: column;
+
+                    h1 {
+                        font-size: 32px;
+                    }
+
+                    p {
+                        font-size: 24px;
+                    }
+
+                    .map {
+                        max-width: 170px;
+                        max-height: 202px;
+                    }
+                }
+            }
+        }
+    }
+}
