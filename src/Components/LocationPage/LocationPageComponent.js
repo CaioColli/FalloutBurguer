@@ -1,5 +1,5 @@
 import './LocationPage.css'
-import { Modal } from '../Modal/ModalComponent'
+import { MapModal } from '../MapModal/MapModalComponent'
 import { useState } from 'react'
 
 export const locations = [
@@ -46,7 +46,7 @@ export const LocationPage = () => {
     
     return (
         <section className='locationPage'>
-            { showModal && <Modal modalContent={ modalContent } onClose={ clickCloseModal } /> }
+            { showModal && <MapModal modalContent={ modalContent } onClose={ clickCloseModal } /> }
 
             <div className='onion'>
                 <img src='Images/Cebola e Picles.png'></img>
@@ -71,8 +71,7 @@ export const LocationPage = () => {
                     <button
                         onClick={
                             () => clickOpenModal({
-                                showInput:true, 
-                                showImage:true,
+                                showSearch:true,
                                 showUnits:true }) 
                             }> Pesquisar 
                     </button>

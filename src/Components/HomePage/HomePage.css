@@ -406,6 +406,4 @@ section {
 }
 
 /* Extra Large Desktop */
-@media screen and (min-width: 2000px) {
-    
-}
+@media screen and (min-width: 2000px) {}
