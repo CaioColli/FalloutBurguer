@@ -1,0 +1,35 @@
+.button {
+    align-items: center;
+    background-color: var(--lightBlue);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        scale: 1.02;
+        box-shadow: 3px 1.5px var(--white);
+    }
+
+    &:active {
+        scale: 0.9;
+    }
+}
+
+.l {
+    min-height: 50px;
+    min-width: 170px;
+}
+
+.m {
+    min-height: 40px;
+    min-width: 120px;
+}
+
+.s {
+    min-height: 35px;
+    min-width: 35px;
+}

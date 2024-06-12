@@ -1,6 +1,6 @@
 .modal {
     align-items: center;
-    background-color: #FDF3F4;
+    background-color: var(--darkBlue-background);
     border-radius: 15px;
     display: flex;
     height: 422px;
@@ -14,7 +14,7 @@
 
     .content-modal {
         align-items: center;
-        background-color: #fff;
+        background-color: var(--gray);
         border-radius: 15px;
         display: flex;
         flex-direction: column;
@@ -29,6 +29,7 @@
             margin-left: auto;
             transition: 1s;
             width: 50px;
+            color: var(--white);
 
             &:hover {
                 scale: 1.1;
@@ -41,7 +42,7 @@
     .modal {
         height: 530px;
         max-width: 300px;
-        top: 40%;
+        top: 50%;
 
         .content-modal {
             height: 498px;

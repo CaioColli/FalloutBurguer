@@ -1,0 +1,83 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--gray);
+    padding: 24px 0;
+    
+    .menu-items {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+
+        h1 {
+            color: var(--white);
+            font-family: 'Rosario';
+            font-size: 40px;
+            font-style: italic;
+            font-weight: 400 ;
+            margin:40px 0 40px 0;
+        }
+       
+
+        a {
+            color: var(--white);
+            cursor: pointer;
+            font-size: 24px;
+            margin-top: 20px;
+            text-decoration: line-through;
+
+            &:hover {
+                color: var(--yellow-background);
+            }
+
+            &:active {
+                scale: 0.9;
+            }
+        }
+    }
+}
+
+/* SmartPhone */
+@media screen and (min-width: 360px) and (max-width: 799px) {
+    .menu {
+        .menu-items {
+            align-items: start;
+            overflow-x: scroll;
+
+            h1 {
+                font-size: 32px;
+                margin: 40px auto;
+            }
+
+            a {
+                font-size: 16px;
+                margin: 20px auto 0px;
+            }
+        }
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 800px) and (max-width: 1279px) {
+    .menu {
+        .menu-items {
+            align-items: start;
+            overflow-x: scroll;
+
+            h1 {
+                margin: 40px auto;
+            }
+
+            a {
+                margin: 20px auto 0px;
+            }
+        }
+    }
+}
+
+/* Small Desktop */
+@media screen and (min-width: 1280px) and (max-width: 1800px) {}
+
+/* Extra Large Desktop */
+@media screen and (min-width: 2000px) {}

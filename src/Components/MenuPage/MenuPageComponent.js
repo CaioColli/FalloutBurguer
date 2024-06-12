@@ -1,103 +1,70 @@
-import './MenuPage.css'
-import { useEffect, useState } from "react"
-import { requestAPI } from "../../Scripts/RequestApi"
+import './MenuPageComponent.css'
+import { useEffect, useRef, useState } from 'react'
+import { MoreOrdersMenuComponent } from '../MoreOrdersMenu/MoreOrdersMenuComponent'
+import { MeatMenuComponent } from '../MeatMenu/MeatMenuComponent'
+import { ChickenMenuComponent } from '../ChickenMenu/ChickenMenuComponent'
+import { AccompanimentMenuComponent } from '../AccompanimentMenu/AccompanimentMenuComponent'
+import useScrollOnDrag from 'react-scroll-ondrag'
 
 export const MenuPage = () => {
-    const [mostOrdered, setMostOrdered] = useState([])
-    const [meat, setMeat] = useState([])
-    const [chicken, setChicken] = useState([])
+    const [width, setWidth] = useState()
 
-    function currencyFormat(value) {
-        return value.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-        })
+    const moreOrdersRef  = useRef()
+    const meatRef   = useRef()
+    const chickenRef   = useRef()
+    const accompanimentRef   = useRef()
+
+    const { events: moreOrdersEvents } = useScrollOnDrag(moreOrdersRef)
+    const { events: meatEvents } = useScrollOnDrag(meatRef)
+    const { events: chickenEvents } = useScrollOnDrag(chickenRef)
+    const { events: accompanimentEvents } = useScrollOnDrag(accompanimentRef)
+
+    const clickDisable = (event) => {
+        event.preventDefault()
     }
 
     useEffect(() => {
-        const fetchMoreOrders = async () => {
-            const request = await requestAPI('https://raw.githubusercontent.com/CaioColli/BurguerHouseJson/main/MoreOrders.json')
-            setMostOrdered(request.menu)
-        }
+        const sizeWidth = window.innerWidth
 
-        const fetchMeat = async () => {
-            const request = await requestAPI('https://raw.githubusercontent.com/CaioColli/BurguerHouseJson/main/Meat.json')
-            setMeat(request.menu)
+        if (sizeWidth < 1280) {
+            setWidth(true)
+        } else {
+            setWidth(false)
         }
-
-        const fetchChicken = async () => {
-            const request = await requestAPI('https://raw.githubusercontent.com/CaioColli/BurguerHouseJson/main/Chicken.json')
-            setChicken(request.menu)
-        }
-
-        fetchMoreOrders()
-        fetchMeat()
-        fetchChicken()
     }, [])
 
     return (
         <section className='menu'>
-            <div className="menu-items">
+            <div className="menu-items" {...(width ? moreOrdersEvents : {})} ref={moreOrdersRef}>
                 <h1>MAIS PEDIDOS</h1>
 
-                <ul className="menu-list">
-                    {mostOrdered && mostOrdered.map((burguer) => {
-                        return (
-                            <li className="item" key={burguer.id} >
-                                <div className='leftSide'>
-                                    <h2 className="title"> {burguer.title} </h2>
-                                    <p className="description"> {burguer.description} </p>
-                                    <p className="price"> {currencyFormat(burguer.price)} </p>
-                                </div>
-                                <div className="rightSide">
-                                    <img className="image" src={burguer.image} />
-                                </div>
-                            </li>
-                        )
-                    })}
-                </ul>
+                <MoreOrdersMenuComponent />
+
+                <a href='' onClick={ clickDisable }>Ver todos...</a>
             </div>
 
-            <div className="menu-items">
+            <div className="menu-items" {...(width ? meatEvents : {})} ref={meatRef}>
                 <h1>CARNE</h1>
 
-                <ul className="menu-list">
-                    {meat && meat.map((burguer) => {
-                        return (
-                            <li className="item" key={burguer.id} >
-                                <div className='leftSide'>
-                                    <h2 className="title"> {burguer.title} </h2>
-                                    <p className="description"> {burguer.description} </p>
-                                    <p className="price"> {currencyFormat(burguer.price)} </p>
-                                </div>
-                                <div className="rightSide">
-                                    <img className="image" src={burguer.image} />
-                                </div>
-                            </li>
-                        )
-                    })}
-                </ul>
+                <MeatMenuComponent />
+
+                <a href='' onClick={ clickDisable }>Ver todos...</a>
             </div>
 
-            <div className="menu-items">
+            <div className="menu-items" {...(width ? chickenEvents : {})} ref={chickenRef}>
                 <h1>FRANGO</h1>
 
-                <ul className="menu-list">
-                    {chicken && chicken.map((burguer) => {
-                        return (
-                            <li className="item" key={burguer.id} >
-                                <div className='leftSide'>
-                                    <h2 className="title"> {burguer.title} </h2>
-                                    <p className="description"> {burguer.description} </p>
-                                    <p className="price"> {currencyFormat(burguer.price)} </p>
-                                </div>
-                                <div className="rightSide">
-                                    <img className="image" src={burguer.image} />
-                                </div>
-                            </li>
-                        )
-                    })}
-                </ul>
+                <ChickenMenuComponent />
+                
+                <a href='' onClick={ clickDisable }>Ver todos...</a>
+            </div>
+
+            <div className="menu-items" {...(width ? accompanimentEvents : {})} ref={accompanimentRef}>
+                <h1>ACOMPANHAMENTOS </h1>
+
+                <AccompanimentMenuComponent />
+
+                <a href='' onClick={ clickDisable }>Ver todos...</a>
             </div>
         </section>
     )

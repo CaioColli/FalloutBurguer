@@ -1,11 +1,12 @@
 import './Header.css'
-import { CiShoppingCart } from "react-icons/ci";
-import { GoSun } from "react-icons/go";
-import { FaCircle } from "react-icons/fa";
-import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { useEffect, useState } from 'react';
+import { CiShoppingCart } from "react-icons/ci"
+import { FaCircle } from "react-icons/fa"
+import { HiOutlineMenuAlt2 } from "react-icons/hi"
+import { useEffect, useState } from 'react'
+import pageLogo from '../../assets/PageIcon.svg'
 
-export const HeaderComponent = ({itemOne, itemTwo, itemThree, itemFour}) => {
+
+export const HeaderComponent = () => {
     const [size, setSize] = useState(false)
 
     useEffect(() => {
@@ -28,23 +29,22 @@ export const HeaderComponent = ({itemOne, itemTwo, itemThree, itemFour}) => {
     }, [])
 
     return (
-        <div id='header-content' className='header-content' style={{ backgroundColor: size ? '#fff' : 'transparent'}} >
+        <div id='header-content' className='header-content' style={{ backgroundColor: size ? 'rgb(0,0,0,70%)' : 'transparent'}} >
             
             <div className='btn-menu'> 
             <HiOutlineMenuAlt2 className='icon-menu' /> 
             </div>
 
-            <img src="Images/IconeHamburguer.svg" alt='Logotipo de um hamburguer'></img>
+            <img src={pageLogo} alt='Logotipo hamburgueria'></img>
 
             <ul>
-                <li>{itemOne}</li>
-                <li>{itemTwo}</li>
-                <li>{itemThree}</li>
-                <li>{itemFour}</li>
+                <li> MAIS PEDIDOS </li>
+                <li> CARNE </li>
+                <li> FRANGO </li>
+                <li> ACOMPANHAMENTOS </li>
             </ul>
 
             <div className='btns'>
-                <button className='btn-darkMode'> <GoSun /> </button>
                 <button className='btn-shoppingCart'> 
                     <FaCircle className='icon-circle' />
                     <CiShoppingCart className='icon-shoppingCart' /> 

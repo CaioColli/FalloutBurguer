@@ -1,0 +1,168 @@
+.menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    .item {
+        background-color: var(--darkBlue-background);
+        border-radius: 16px;
+        display: flex;
+        height: 356px;
+        margin: 0 24px;
+        width: 555px;
+        
+
+        .leftSide {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            width: 70%;
+
+            .topSide {
+                align-items: center;
+                background-color: var(--white);
+                border-radius: 16px 0 0 0;
+                display: flex;
+                height: 30%;
+                padding: 8px;
+
+                .image {
+                    max-height: 110px;
+                    max-width: 115px;
+                }
+
+                .title {
+                    color: var(--red);
+                    font-size: 24px;
+                    font-weight: bold;
+                    margin-left: 16px;
+                }
+            }
+
+            .bottomSide {
+                display: flex;
+                flex-direction: column;
+                height: 70%;
+                justify-content: space-between;
+                padding: 24px 16px;
+
+                .description {
+                    color: var(--white);
+                    font-size: 16px;
+                    padding-top: 8px;
+                }
+
+                .value {
+                    align-items: center;
+                    display: flex;
+
+                    button {
+                        background-color: var(--green);
+
+                        .icon-button {
+                            min-height: 30px;
+                            min-width: 30px;
+                        }
+                    }
+
+                    .price {
+                        color: var(--green);
+                        font-size: 18px;
+                        font-weight: bold;
+                        padding: 0 16px;
+                    }
+
+                    .more-information {
+                        background-color: transparent;
+                        border: none;
+                        cursor: pointer;
+
+                        .text-more-information {
+                            color: var(--white);
+                            font-family: 'Rosario';
+                            font-size: 16px;
+                            font-style: italic;
+                            font-weight: 800;
+                            transition: 0.2s;
+
+                            &:hover {
+                                color: var(--yellow-background);
+                            }
+
+                            &:active {
+                                scale: 0.9;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .rightSide {
+            background-color: var(--yellow-background);
+            border-radius: 0 8px 8px 0;
+            height: 100%;
+            position: relative;
+            width: 30%;
+
+            .radiationImage {
+                left: 5%;
+                max-width: 70px;
+                position: absolute;
+                top: 5%;
+            }
+
+            .vaultBoyImage {
+                position: absolute;
+                bottom: 0;
+            }
+        }
+    }
+}
+
+/* SmartPhone */
+@media screen and (min-width: 360px) and (max-width: 799px) {
+    .menu-list {
+        flex-wrap: nowrap;
+        .item {
+            max-width: 300px; 
+            margin: 0 16px;
+            .leftSide {
+                width: 100%;
+                .topSide {
+                    border-radius: 16px 16px 0 0;
+                    flex-direction: column;
+                    gap: 16px;
+                    height: auto;
+
+                    .title {
+                        margin: 0;
+                    }
+                }
+            }
+
+            .rightSide {
+                display: none;
+            }
+        }
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 800px) and (max-width: 1279px) {
+    .menu-list {
+        flex-wrap: nowrap;
+    }
+}
+
+/* Small Desktop */
+/* Optei por colocar 1800px ao invés de 1700px */
+@media screen and (min-width: 1280px) and (max-width: 1800px) {
+    .menu-list {
+        justify-content: center;
+        gap: 24px;
+    }
+}
+
+/* Extra Large Desktop */
+@media screen and (min-width: 2000px) {}

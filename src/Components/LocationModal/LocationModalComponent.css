@@ -5,17 +5,35 @@
     align-items: center;
 
     input {
-        margin-top: 24px;
-        width: 336px;
-        height: 37px;
-        text-align: center;
+        background-color: transparent;
         border-radius: 15px;
-        border: 2px solid rgba(0, 0, 0, 0.5);
+        border: 2px solid var(--white);
+        color: var(--white);
+        height: 37px;
+        margin-top: 24px;
+        outline: none;
+        text-align: center;
+        width: 336px; 
+        transition: 0.5s;
+
+        &::placeholder {
+            color: var(--white);
+        }
+
+        &:focus {
+            background-color: var(--white);
+            border-color: var(--darkBlue-background);
+            color: var(--darkBlue-background);
+
+            &::placeholder {
+                color: var(--darkBlue-background);
+            }
+        }
     }
 
     .icon-burguer {
         margin-top: 64px;
-        width: 90px;
+        width: 120px;
     }
 
     .about-restaurant {

@@ -25,9 +25,10 @@
             cursor: pointer;
             position: relative;
             font-family: "Rosario";
+            color: var(--gray);
 
             &::before {
-                background-color: #CE1F26;
+                background-color: var(--red);
                 bottom: -5px;
                 content: '';
                 height: 4px;
@@ -42,7 +43,7 @@
             }
 
             &::after {
-                background-color: #CE1F26;
+                background-color: var(--red);
                 bottom: -5px;
                 content: '';
                 height: 4px;
@@ -64,35 +65,24 @@
         gap: 8px;
         margin-right: 80px;
 
-        .btn-darkMode, .btn-shoppingCart {
+        .btn-shoppingCart {
             align-items: center;
-            background-color: #ffff;
+            background-color: var(--white);
             border-radius: 10px;
-            border: 1px solid #8d8d8d36;
+            border: 1px solid var(--gray);
+            color: var(--darkBlue-background);
             cursor: pointer;
             display: flex;
-            justify-content: center;
-            transition: 0.5s ease;
-
-            &:hover {
-                scale: 1.1;
-            }
-        }
-
-        .btn-darkMode {
-            height: 30px;
-            width: 30px;
-        }
-
-        .btn-shoppingCart {
             height: 60px;
+            justify-content: center;
             position: relative;
+            transition: 0.5s ease;
             width: 60px;
 
             .icon-circle {
-                display: none;
+                display: block;
 
-                fill: #FF0000;
+                fill: var(--red);
                 height: 11px;
                 position: absolute;
                 right: -2px;
@@ -103,6 +93,10 @@
             .icon-shoppingCart {
                 width: 40px;
                 height: 40px;
+            }
+
+            &:hover {
+                scale: 1.1;
             }
         }
     }
@@ -117,6 +111,7 @@
             display: block;
             margin-left: 24px;
             .icon-menu {
+                color: var(--white);
                 height: 35px;
                 width: 35px;
             }
@@ -136,15 +131,21 @@
             margin-right: 24px;
             order: 3;
 
-            .btn-darkMode {
-                display: none;
-            }
-
             .btn-shoppingCart {
-                background-color: #000000;
+                background-color: var(--white);
                 color: #ffff;
                 height: 40px;
                 width: 40px;
+
+                &:hover {
+                    scale: 1;
+                }
+
+                .icon-shoppingCart {
+                    color: var(--black);
+                    height: 35px;
+                    width: 35px;
+                }
             }
         }
     }
