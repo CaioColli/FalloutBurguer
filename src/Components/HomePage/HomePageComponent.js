@@ -7,6 +7,7 @@ import { currencyFormat } from '../../Scripts/CurrencyFormat'
 import { Button } from '../Buttons/Button'
 import traceIcon from '../../assets/Trace.svg'
 import radiationIcon from '../../assets/RadiationIcon.svg'
+import shadowBurguer from '../../assets/shadow.svg'
 gsap.registerPlugin(ScrollTrigger)
 
 export const HomePageComponents = () => {
@@ -112,7 +113,7 @@ export const HomePageComponents = () => {
 
                         <div className='content-burguerImage'>
                             {featuresItem && <img src={featuresItem.image} alt="Foto de um hamburguer" className="burguerImage"></img>}
-                            <img src="Images/SombraHamburguer.svg" alt="Sombra do hamburguer" className="shadowBurguer"></img>
+                            <img src={ shadowBurguer } alt="Sombra do hamburguer" className="shadowBurguer"></img>
                         </div>
                     </div>
                 </div>
