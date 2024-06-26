@@ -1,13 +1,17 @@
 import './MenuPageComponent.css'
-import { useEffect, useRef, useState } from 'react'
-import { MoreOrdersMenuComponent } from '../MoreOrdersMenu/MoreOrdersMenuComponent'
-import { MeatMenuComponent } from '../MeatMenu/MeatMenuComponent'
-import { ChickenMenuComponent } from '../ChickenMenu/ChickenMenuComponent'
-import { AccompanimentMenuComponent } from '../AccompanimentMenu/AccompanimentMenuComponent'
 import useScrollOnDrag from 'react-scroll-ondrag'
+import { AccompanimentMenuComponent } from './MenuItems/AccompanimentMenu/AccompanimentMenuComponent'
+import { ChickenMenuComponent } from './MenuItems/ChickenMenu/ChickenMenuComponent'
+import { MeatMenuComponent } from './MenuItems/MeatMenu/MeatMenuComponent'
+import { MoreOrdersMenuComponent } from './MenuItems/MoreOrdersMenu/MoreOrdersMenuComponent'
+import { useEffect, useRef, useState } from 'react'
 
-export const MenuPage = () => {
+export const MenuPage = ({ onClickBuy }) => {
     const [width, setWidth] = useState()
+
+    const itemClicked = (item) => {
+        onClickBuy(item)
+    }
 
     const moreOrdersRef  = useRef()
     const meatRef   = useRef()
@@ -38,7 +42,7 @@ export const MenuPage = () => {
             <div className="menu-items" {...(width ? moreOrdersEvents : {})} ref={moreOrdersRef}>
                 <h1>MAIS PEDIDOS</h1>
 
-                <MoreOrdersMenuComponent />
+                <MoreOrdersMenuComponent onClickBuy={ itemClicked } />
 
                 <a href='' onClick={ clickDisable }>Ver todos...</a>
             </div>
@@ -46,7 +50,7 @@ export const MenuPage = () => {
             <div className="menu-items" {...(width ? meatEvents : {})} ref={meatRef}>
                 <h1>CARNE</h1>
 
-                <MeatMenuComponent />
+                <MeatMenuComponent onClickBuy={ itemClicked } />
 
                 <a href='' onClick={ clickDisable }>Ver todos...</a>
             </div>
@@ -54,7 +58,7 @@ export const MenuPage = () => {
             <div className="menu-items" {...(width ? chickenEvents : {})} ref={chickenRef}>
                 <h1>FRANGO</h1>
 
-                <ChickenMenuComponent />
+                <ChickenMenuComponent onClickBuy={ itemClicked }/>
                 
                 <a href='' onClick={ clickDisable }>Ver todos...</a>
             </div>
@@ -62,7 +66,7 @@ export const MenuPage = () => {
             <div className="menu-items" {...(width ? accompanimentEvents : {})} ref={accompanimentRef}>
                 <h1>ACOMPANHAMENTOS </h1>
 
-                <AccompanimentMenuComponent />
+                <AccompanimentMenuComponent onClickBuy={ itemClicked } />
 
                 <a href='' onClick={ clickDisable }>Ver todos...</a>
             </div>

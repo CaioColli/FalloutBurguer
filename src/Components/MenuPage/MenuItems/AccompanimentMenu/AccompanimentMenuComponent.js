@@ -1,8 +1,8 @@
 import { CardMenu } from "../CardsMenu/CardsMenuComponent"
-import { requests } from "../../Scripts/RequestApi"
+import { requests } from "../../../../Scripts/RequestApi"
 import { useEffect, useState } from "react"
 
-export const AccompanimentMenuComponent = () => {
+export const AccompanimentMenuComponent = ({ onClickBuy }) => {
     const [accompanimentMenu, setAccompanimentMenu] = useState([])
 
     useEffect(() => {
@@ -14,19 +14,15 @@ export const AccompanimentMenuComponent = () => {
         fetchData()
     }, [])
 
-    const handleClick = (id) => {
-        console.log('O id do item é:', id)
+    const handleClick = (item) => {
+        onClickBuy(item)
     }
 
     return (
         <>
-            <CardMenu onClick={handleClick}
-                data={accompanimentMenu}
-                id={'id'}
-                image={'image'}
-                title={'title'}
-                description={'description'}
-                price={'price'}
+            <CardMenu 
+                data={ accompanimentMenu }
+                onClickBuy={ handleClick }
             />
         </>
     )

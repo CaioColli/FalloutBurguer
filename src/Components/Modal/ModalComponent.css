@@ -2,6 +2,7 @@
     align-items: center;
     background-color: var(--darkBlue-background);
     border-radius: 15px;
+    border: none;
     display: flex;
     height: 422px;
     justify-content: center;
@@ -18,18 +19,19 @@
         border-radius: 15px;
         display: flex;
         flex-direction: column;
-        height: 390px;
+        height: 95%;
         overflow-x: hidden;
         overflow-y: scroll;
-        width: 968px;
+        width: 98%;
 
         .icon-close {
+            color: var(--white);
             cursor: pointer;
             height: 50px;
-            margin-left: auto;
+            position: absolute;
             transition: 1s;
             width: 50px;
-            color: var(--white);
+            right: 16px;
 
             &:hover {
                 scale: 1.1;
@@ -41,11 +43,13 @@
 @media screen and (min-width: 360px) and (max-width: 799px) {
     .modal {
         height: 530px;
+        height: auto;
         max-width: 300px;
         top: 50%;
 
         .content-modal {
-            height: 498px;
+            height: auto;
+            margin: 16px 0;
             max-width: 268px;
             overflow-y: scroll;
         }

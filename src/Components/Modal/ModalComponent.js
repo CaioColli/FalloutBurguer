@@ -26,14 +26,16 @@ export const Modal = ({ onClose, children }) => {
             document.removeEventListener('keydown', handleScapeKey)
         }
 
-    }, [])
+    }, [onClose])
 
     return (
-        <div className='modal' ref={ref}>
-            <div className='content-modal'>
-                <IoIosClose id='icon-close' className='icon-close' onClick={onClose} />
-                { children }
-            </div>
-        </div>
+        <>
+            <dialog className='modal' ref={ref} open>
+                <div className='content-modal'>
+                    <IoIosClose id='icon-close' className='icon-close' onClick={onClose} />
+                    { children }
+                </div>
+            </dialog>
+        </>
     )
 }

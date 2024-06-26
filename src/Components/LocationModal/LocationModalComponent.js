@@ -12,6 +12,7 @@ export const MapModal = ({ modalContent, onClose }) => {
     const [search, setSearch] = useState('')
     const [visibility, setVisibility] = useState(false)
     const [ locations, setLocations ] = useState([])
+   
     const handleSearch = (event) => {
         setSearch(event.target.value)
 
@@ -66,7 +67,7 @@ export const MapModal = ({ modalContent, onClose }) => {
                     {showUnits && locationsFiltered.map((location, index) => {
                         return (
                             <div className='about-restaurant' key={index} style={{ display: visibility ? 'flex' : 'none' }}>
-                                <img src='Images/Imagem Loja.png' alt='Imagem da lanchonete'></img>
+                                <img src={location.image} alt='Imagem da lanchonete'></img>
                                 <div>
                                     <h1> Unidade de {location.location} </h1>
                                     <p> <LuPhone className='icon' /> {location.phone} </p>

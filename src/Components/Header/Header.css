@@ -2,10 +2,12 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
+    max-width: 1920px;
+    overflow: hidden;
     padding: 40px 0;
     position: absolute;
-    width: 100%;
     top: 0;
+    width: 100%;
     z-index: 2;
 
     .btn-menu {
@@ -16,45 +18,50 @@
         margin-left: 80px;
     }
 
-    ul {
-        display: flex;
-        gap: 48px;
-        list-style-type: none;
+    nav {
+        ul {
+            display: flex;
+            gap: 48px;
+            list-style-type: none;
+    
+            li {
+                a {
+                    color: var(--gray);
+                    cursor: pointer;
+                    font-family: "Rosario";
+                    position: relative;
+                    text-decoration: none;
 
-        li {
-            cursor: pointer;
-            position: relative;
-            font-family: "Rosario";
-            color: var(--gray);
-
-            &::before {
-                background-color: var(--red);
-                bottom: -5px;
-                content: '';
-                height: 4px;
-                position: absolute;
-                left: 50%;
-                transition: width 0.3s;
-                width: 0;
-            }
-
-            &:hover::before {
-                width: 25%;
-            }
-
-            &::after {
-                background-color: var(--red);
-                bottom: -5px;
-                content: '';
-                height: 4px;
-                position: absolute;
-                right: 50%;
-                transition: width 0.3s;
-                width: 0;
-            }
-
-            &:hover::after {
-                width: 25%;
+                    &::before {
+                        background-color: var(--red);
+                        bottom: -5px;
+                        content: '';
+                        height: 4px;
+                        position: absolute;
+                        left: 50%;
+                        transition: width 0.3s;
+                        width: 0;
+                    }
+        
+                    &:hover::before {
+                        width: 25%;
+                    }
+        
+                    &::after {
+                        background-color: var(--red);
+                        bottom: -5px;
+                        content: '';
+                        height: 4px;
+                        position: absolute;
+                        right: 50%;
+                        transition: width 0.3s;
+                        width: 0;
+                    }
+        
+                    &:hover::after {
+                        width: 25%;
+                    }
+                }
             }
         }
     }
@@ -104,7 +111,10 @@
 
 @media screen and (max-width: 1279px) {
     .header-content {
+        justify-content: space-between;
         position: fixed;
+        /* width: 100%; */
+
         z-index: 20;
 
         .btn-menu {
@@ -120,10 +130,10 @@
         img {
             margin: 0;
             order: 2;
-            width: 40px;
+            width: 55px;
         }
 
-        ul {
+        nav {
             display: none;
         }
 
@@ -150,3 +160,4 @@
         }
     }
 }
+

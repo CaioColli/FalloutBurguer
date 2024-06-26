@@ -1,11 +1,10 @@
 .locationPage {
-    /* justify-content: space-between; */
     align-items: center;
     background-color: var(--yellow-background);
     display: flex;
     justify-content: left;
     position: relative;
-    height: 100vh;
+    height: 1080px;
 
     .leftSide-locationPage {
         align-items: center;

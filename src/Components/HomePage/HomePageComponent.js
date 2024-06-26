@@ -2,7 +2,7 @@ import './HomePage.css'
 import { useEffect, useState } from 'react'
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { fetchMeat } from '../../Scripts/RequestApi'
+import { requests } from '../../Scripts/RequestApi'
 import { currencyFormat } from '../../Scripts/CurrencyFormat'
 import { Button } from '../Buttons/Button'
 import traceIcon from '../../assets/Trace.svg'
@@ -11,15 +11,14 @@ import shadowBurguer from '../../assets/shadow.svg'
 gsap.registerPlugin(ScrollTrigger)
 
 export const HomePageComponents = () => {
-
     const [emphasis, setEmphasis] = useState([])
     const featuresItem = emphasis[1]
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await fetchMeat()
-                setEmphasis(data)
+                const data = await requests()
+                setEmphasis(data.meat)
             } catch (error) {
                 console.error('Erro ao buscar os dados', error)
             }

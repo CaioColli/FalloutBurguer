@@ -13,7 +13,7 @@
         margin-top: 24px;
         outline: none;
         text-align: center;
-        width: 336px; 
+        width: 336px;
         transition: 0.5s;
 
         &::placeholder {
@@ -39,6 +39,12 @@
     .about-restaurant {
         display: flex;
         padding: 24px 0;
+
+        img {
+            border-radius: 15px;
+            max-height: 230px;
+            width: 340px;
+        }
 
         div {
             margin-left: 24px;
@@ -126,25 +132,25 @@
         input {
             font-size: 1.5rem;
         }
-    
+
         .about-restaurant {
             img {
                 width: 250px;
             }
-    
+
             div {
                 align-items: start;
                 display: flex;
                 flex-direction: column;
-    
+
                 h1 {
                     font-size: 32px;
                 }
-    
+
                 p {
                     font-size: 24px;
                 }
-    
+
                 .map {
                     max-width: 170px;
                     max-height: 202px;

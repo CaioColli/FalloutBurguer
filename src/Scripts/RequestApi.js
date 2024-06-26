@@ -5,23 +5,23 @@ async function requestAPI(link) {
   return jsonRequest
 }
 
-export const fetchMoreOrders = async () => {
+const fetchMoreOrders = async () => {
   const request = await requestAPI('https://raw.githubusercontent.com/CaioColli/BurguerHouseJson/main/MoreOrders.json')
   return(request.menu)
 }
 
-export const fetchMeat = async () => {
+const fetchMeat = async () => {
   const request = await requestAPI('https://raw.githubusercontent.com/CaioColli/BurguerHouseJson/main/Meat.json')
   return(request.menu)
 }
 
-export const fetchChicken = async () => {
+const fetchChicken = async () => {
   const request = await requestAPI('https://raw.githubusercontent.com/CaioColli/BurguerHouseJson/main/Chicken.json')
   return(request.menu)
 }
 
 //Consumir no cardápio
-export const fetchAccompaniment = async () => {
+const fetchAccompaniment = async () => {
   const request = await requestAPI('https://raw.githubusercontent.com/CaioColli/BurguerHouseJson/main/accompaniment.json')
   return(request.menu)
 }
