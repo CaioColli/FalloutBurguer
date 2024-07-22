@@ -9,8 +9,8 @@ import { useEffect, useRef, useState } from 'react'
 export const MenuPage = ({ onClickBuy }) => {
     const [width, setWidth] = useState()
 
-    const itemClicked = (item) => {
-        onClickBuy(item)
+    const itemClicked = (item, quantity) => {
+        onClickBuy(item, quantity)
     }
 
     const moreOrdersRef  = useRef()
@@ -42,7 +42,7 @@ export const MenuPage = ({ onClickBuy }) => {
             <div className="menu-items" {...(width ? moreOrdersEvents : {})} ref={moreOrdersRef}>
                 <h1>MAIS PEDIDOS</h1>
 
-                <MoreOrdersMenuComponent onClickBuy={ itemClicked } />
+                <MoreOrdersMenuComponent />
 
                 <a href='' onClick={ clickDisable }>Ver todos...</a>
             </div>
@@ -50,7 +50,7 @@ export const MenuPage = ({ onClickBuy }) => {
             <div className="menu-items" {...(width ? meatEvents : {})} ref={meatRef}>
                 <h1>CARNE</h1>
 
-                <MeatMenuComponent onClickBuy={ itemClicked } />
+                <MeatMenuComponent />
 
                 <a href='' onClick={ clickDisable }>Ver todos...</a>
             </div>
@@ -58,7 +58,7 @@ export const MenuPage = ({ onClickBuy }) => {
             <div className="menu-items" {...(width ? chickenEvents : {})} ref={chickenRef}>
                 <h1>FRANGO</h1>
 
-                <ChickenMenuComponent onClickBuy={ itemClicked }/>
+                <ChickenMenuComponent />
                 
                 <a href='' onClick={ clickDisable }>Ver todos...</a>
             </div>
@@ -66,7 +66,7 @@ export const MenuPage = ({ onClickBuy }) => {
             <div className="menu-items" {...(width ? accompanimentEvents : {})} ref={accompanimentRef}>
                 <h1>ACOMPANHAMENTOS </h1>
 
-                <AccompanimentMenuComponent onClickBuy={ itemClicked } />
+                <AccompanimentMenuComponent />
 
                 <a href='' onClick={ clickDisable }>Ver todos...</a>
             </div>

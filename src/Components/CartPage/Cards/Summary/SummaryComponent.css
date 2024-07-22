@@ -1,0 +1,42 @@
+.ul-summary {
+    padding: 24px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 32px;
+    grid-row-gap: 24px;
+    li {
+        align-items: center;
+        display: flex;
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--white);
+            margin-right: 8px;
+        }
+
+        .quantity-price {
+            display: flex;
+            gap: 16px;
+            .quantity {
+                font-size: 18px;
+                color: var(--white);
+            }
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--green);
+        }
+    }
+}
+
+/* 360 new SmartPhone && 320 old SmartPhone*/ 
+@media screen and (min-width: 320px) and (max-width: 799px) {
+    .ul-summary {
+        display: flex;
+        flex-direction: column;
+    }
+}

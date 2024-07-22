@@ -1,20 +1,21 @@
 .shopping-cart-menu {
-    align-items: center;
     background-color: var(--darkBlue-background);
     border-radius: 15px 0 0 15px;
     height: auto;
+    max-width: 300px;
     position: absolute;
     right: 0;
     top: 0;
+    width: 300px;
     z-index: 999;
 
     section {
-        background-color: var(--gray);
-        height: 850px;
-        margin: 16px 16px;
-        position: relative;
-        width: 488px;
+        max-height: 90vh;
+        max-width: 300px;
+        min-height: 90vh;
+        overflow-x: hidden;
         overflow-y: scroll;
+        position: relative;
 
         header {
             width: 100%;
@@ -34,79 +35,87 @@
             justify-content: center;
 
             ul {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                align-items: center;
                 li {
                     all: unset;
-                    display: flex;
-                    margin: 16px 0;
-                    .card-image {
-                        align-items: center;
-                        background-color: var(--darkBlue-background);
-                        border-radius: 20px;
-                        display: flex;
-                        height: 200px;
-                        justify-content: center;
-                        width: 200px;
-                        .image {
-                            width: 90%;
-                        }
-                    }
 
                     .item-description {
                         display: flex;
-                        flex-direction: column;
-                        padding: 8px 0 8px 16px;
-                        justify-content: space-between;
+                        align-items: center;
+                        gap: 16px;
+                        .card-image {
+                            align-items: center;
+                            background-image: url('../../../assets/BackgroundItem.svg');
+                            background-repeat: no-repeat;
+                            background-size: 100%;
+                            display: flex;
+                            min-height: 125px;
+                            justify-content: center;
+                            min-width: 125px;
 
+                            .image {
+                                max-width: 75px;
+                            }
+                        }
                         .title {
                             color: var(--white);
                             font-size: 24px;
                             font-weight: bold;
+                            max-width: 115px;
                         }
+                    }
 
-                        .price-container {
-                            .buttons {
+                    .price-container {
+                        margin: 16px 0;
+                        .buttons {
+                            display: flex;
+                            .quantity-items {
+                                margin-right: 8px;
                                 display: flex;
-                                .quantity-items {
-                                    margin-right: 8px;
-                                    display: flex;
-                                    border: 1px solid var(--white);
-                                    border-radius: 15px;
-                                    padding: 8px;
-                                    .quantify-buttons {
-                                        background-color: transparent;
-                                        border: none;
-                                        color: var(--white);
-                                        cursor: pointer;
-                                        font-size: 24px;
-                                        transition: 0.2s;
-                    
-                                        &:hover {
-                                            color: var(--lightBlue);
-                                        }
-                                    }
-                    
-                                    input {
-                                        border: none;
-                                        background-color: transparent;
-                                        text-align: center;
-                                        width: 40px;
-                                        color: var(--white);
-                                        margin-left: 16px;
-                                    }        
-                                }
-
-                                button {
+                                border: 1px solid var(--white);
+                                border-radius: 15px;
+                                padding: 8px;
+                                .quantify-buttons {
+                                    background-color: transparent;
+                                    border: none;
                                     color: var(--white);
+                                    cursor: pointer;
+                                    font-size: 24px;
+                                    transition: 0.2s;
+                
+                                    &:hover {
+                                        color: var(--lightBlue);
+                                    }
                                 }
+                
+                                input {
+                                    border: none;
+                                    background-color: transparent;
+                                    text-align: center;
+                                    width: 40px;
+                                    color: var(--white);
+                                    margin-left: 16px;
+                                }        
                             }
 
-                            .price {
-                                color: var(--green);
-                                font-size: 24px;
-                                font-weight: bold;
-                                padding-top: 16px;
+                            button {
+                                color: var(--white);
                             }
                         }
+                    }
+
+                    .price {
+                        color: var(--green);
+                        font-size: 24px;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+
+                    &:nth-last-child(1) {
+                        margin-bottom: 116px;
                     }
                 }
             }
@@ -115,46 +124,59 @@
                 align-items: center;
                 display: flex;
                 flex-direction: column;
+                margin-top: 70%;
                 margin-top: calc(50% - 50px);
                 div {
                     border-radius: 500px;
-                    border: 5px solid var(--darkBlue-background);
-                    height: 350px;
+                    border: 5px solid var(--white);
+                    height: 225px;
                     overflow: hidden;
                     position: relative;
-                    width: 350px;
+                    width: 225px;
 
                     img {
                         bottom: 0;
                         left: 50px;
                         position: absolute;
-                        width: 220px;
+                        width: 140px;
                     }
                 }
 
                 span {
                     color: var(--white);
                     font-family: 'Rosario';
-                    font-size: 32px;
+                    font-size: 24px;
                     font-weight: bold;
                     padding-top: 16px;
                 }
+            }
+        }
+
+        .total-value-cart {
+            align-items: center;
+            background-color: var(--yellow-background);
+            border-radius: 0 0 0 15px;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            height: 100px;
+            justify-content: center;
+            position: fixed;
+            width: 300px;
+            .total-value {
+                font-size: 24px;
+                color: var(--white);
+                font-weight: bold;
+            }
+
+            button {
+                color: var(--white);
             }
         }
     }
 
     section::-webkit-scrollbar {
         width: 5px;
-    }
-}
-
-/* SmartPhone */
-@media screen and (min-width: 360px) and (max-width: 800px) {
-    .shopping-cart-menu {
-        max-width: 300px;
-
-        section {
-            max-width: 279px;
-        }
     }
 }

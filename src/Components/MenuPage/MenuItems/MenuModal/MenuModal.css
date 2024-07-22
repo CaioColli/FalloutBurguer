@@ -1,3 +1,5 @@
+/* Coloquei !important nos display flex pois por algum motivo quando o site é hospedado não esta aplicando o flex */
+
 .menu-modal-content {
     display: flex;
     height: 100%;
@@ -19,18 +21,18 @@
         .item-image {
             align-items: center;
             background-color: var(--darkBlue-background);
-            display: flex;
+            border-radius: 500px;
+            display: flex !important;
             height: 180px;
             justify-content: center;
             width: 180px;
-            border-radius: 500px;
             img {
                 width: 75%;
                 height: 65%;
             }
         }
         .item-description {
-            display: flex;
+            display: flex !important;
             flex-direction: column;
             margin-left: 24px;
             max-width: 520px;
@@ -47,7 +49,7 @@
             }
 
             footer {
-                display: flex;
+                display: flex !important;
                 gap: 16px;
             
                 .quantity-items {

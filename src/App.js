@@ -1,28 +1,22 @@
-//import { useEffect, useState } from 'react'
-import { useState } from 'react'
-import { HeaderComponent } from './Components/Header/HeaderComponent'
-import { HomePageComponents } from './Components/HomePage/HomePageComponent'
-import { LocationPage } from './Components/LocationPage/LocationPageComponent'
-import { MenuPage } from './Components/MenuPage/MenuPageComponent'
 import { PageContainer } from './Components/PageContainer/PageContainerComponents'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { InitialPage } from './Components/InitialPage/InitialPage'
+import { CartPage } from './Components/CartPage/CartPageComponent'
+import { ContextData } from './Context/Context'
 
 export const App = () => {
-  const [ itemInCart, setItemsInCart ] = useState([])
-
-  const clickBuyItem = (item) => {
-    setItemsInCart((prevItems) => [...prevItems, item])
-  }
-
   return (
     <div>
       <PageContainer>
-          <HeaderComponent itemsInCart={ itemInCart } />
-      
-          <HomePageComponents />
-          
-          <LocationPage />
-
-          <MenuPage onClickBuy={ clickBuyItem } />
+        <BrowserRouter>
+          <ContextData>
+            <Routes>
+              <Route path='/' element={ <InitialPage /> } />
+              <Route path='/carrinho' element={ <CartPage /> } />
+              <Route path='*' element={ <div> Nada </div> } />
+            </Routes>
+          </ContextData>
+        </BrowserRouter>
       </PageContainer>
     </div>
   )

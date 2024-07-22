@@ -1,0 +1,11 @@
+Nesse projeto usei ContextApi para evitar o problemas de prop drilling, dessa forma criei um único arquivo que é responsável em armazenar os itens clicados e sua respectiva quantidade para usa-las em outros componentes.
+
+Bibliotecas externas usadas:
+
+UseScrollOnDrag
+react-phone-number-input
+sweetalert2
+
+API's usadas:
+
+UseViaCep

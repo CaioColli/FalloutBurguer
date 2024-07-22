@@ -1,0 +1,21 @@
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 0 auto;
+    width: auto;
+    max-width: 1200px;
+    padding: 24px 80px;
+}
+
+/* SmartPhone */
+@media screen and (min-width: 360px) and (max-width: 799px) {
+    .cards {
+        padding: 0 10px;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+    
+}

@@ -2,7 +2,7 @@ import { CardMenu } from "../CardsMenu/CardsMenuComponent";
 import { requests } from "../../../../Scripts/RequestApi";
 import { useEffect, useState } from "react";
 
-export const MeatMenuComponent = ({ onClickBuy }) => {
+export const MeatMenuComponent = () => {
     const [meat, setMeat] = useState([])
 
     useEffect(() => {
@@ -14,15 +14,10 @@ export const MeatMenuComponent = ({ onClickBuy }) => {
         fetchData()
     }, [])
 
-    const handleClick = (item) => {
-        onClickBuy(item)
-    }
-
     return (
         <>
             <CardMenu
                 data={meat}
-                onClickBuy={ handleClick }
             />
         </>
     )

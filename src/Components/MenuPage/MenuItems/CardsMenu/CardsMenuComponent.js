@@ -5,15 +5,16 @@ import { CiShoppingCart } from "react-icons/ci"
 import radiationIcon from '../../../../assets/RadiationIcon.svg'
 import vaultBoy from '../../../../assets/MiniVaultBoy.svg'
 import { MenuModal } from '../MenuModal/MenuModal'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { Context } from '../../../../Context/Context'
 
-export const CardMenu = ({ data, onClickBuy }) => {
+export const CardMenu = ({ data }) => {
     const [selectedItem, setSelectedItem] = useState(null)
     const [showModal, setShowModal] = useState(false)
+    const { clickBuyItem } = useContext(Context)
 
-    const handleClickBuy = (item) => {
-        setSelectedItem(item)
-        onClickBuy(item)
+    const handleClickBuy = (item, quantity = 1) => {
+        clickBuyItem(item, quantity)
     }
 
     const handleClickMoreInformation = (item) => {
@@ -59,7 +60,7 @@ export const CardMenu = ({ data, onClickBuy }) => {
                 })}
             </ul>
 
-            {showModal && <MenuModal item={selectedItem} onClose={ clickCloseModal } onClickBuy={ handleClickBuy } />}
+            {showModal && <MenuModal item={selectedItem} onClose={ clickCloseModal }/>}
         </>
     )
 }

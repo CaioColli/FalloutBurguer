@@ -48,10 +48,10 @@ export const MenuBurguer = ({ onclose }) => {
 
                 <nav className='nav-products'>
                     <ul>
-                        <li> <a href=''> MAIS PEDIDOS  </a> </li>
-                        <li > <a href=''> CARNE </a> </li>
-                        <li> <a href=''> FARNGO </a> </li>
-                        <li> <a href=''> ACOMPANHAMENTOS </a> </li>
+                        <li>MAIS PEDIDOS</li>
+                        <li >CARNE</li>
+                        <li>FARNGO</li>
+                        <li>ACOMPANHAMENTOS</li>
                     </ul>
                 </nav>
 

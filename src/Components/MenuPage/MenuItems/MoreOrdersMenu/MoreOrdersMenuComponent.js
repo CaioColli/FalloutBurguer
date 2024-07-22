@@ -2,7 +2,7 @@ import { requests } from '../../../../Scripts/RequestApi'
 import { useEffect, useState } from 'react'
 import { CardMenu } from '../CardsMenu/CardsMenuComponent'
 
-export const MoreOrdersMenuComponent = ({ onClickBuy }) => {
+export const MoreOrdersMenuComponent = () => {
     const [moreOrdered, setMoreOrdered] = useState([])
 
     useEffect(() => {
@@ -18,15 +18,10 @@ export const MoreOrdersMenuComponent = ({ onClickBuy }) => {
         fetchData()
     }, [])
 
-    const handleClick = (item) => {
-        onClickBuy(item)
-    }
-
     return (
         <>
             <CardMenu
-                data={ moreOrdered } 
-                onClickBuy={ handleClick }
+                data={ moreOrdered }
             />
         </>
     )

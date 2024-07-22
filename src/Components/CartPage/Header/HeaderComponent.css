@@ -1,0 +1,9 @@
+.cart-header {
+    display: flex;
+    justify-content: center;
+    height: 160px;
+
+    img {
+        max-width: 80px;
+    }
+}

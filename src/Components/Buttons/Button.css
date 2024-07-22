@@ -33,3 +33,13 @@
     min-height: 35px;
     min-width: 35px;
 }
+
+.disabled {
+    background-color: var(--gray);
+    cursor: not-allowed;
+
+    &:hover {
+        scale: 1;
+        box-shadow: 0 0;
+    }
+}

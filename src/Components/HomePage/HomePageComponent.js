@@ -1,5 +1,5 @@
 import './HomePage.css'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { requests } from '../../Scripts/RequestApi'
@@ -8,10 +8,12 @@ import { Button } from '../Buttons/Button'
 import traceIcon from '../../assets/Trace.svg'
 import radiationIcon from '../../assets/RadiationIcon.svg'
 import shadowBurguer from '../../assets/shadow.svg'
+import { Context } from '../../Context/Context'
 gsap.registerPlugin(ScrollTrigger)
 
 export const HomePageComponents = () => {
     const [emphasis, setEmphasis] = useState([])
+    const { clickBuyItem } = useContext(Context)
     const featuresItem = emphasis[1]
 
     useEffect(() => {
@@ -70,10 +72,8 @@ export const HomePageComponents = () => {
         fetchData()
     }, [])
     
-    const handleClick = (id) => {
-        //console.log('ID do item', id)
-        //setSelectedItemId(id)
-        //Aqui atribuo a função que adiciona o item no carrinho
+    const handleClickBuy = (item, quantity = 1) => {
+        clickBuyItem(item, quantity)
     }
 
     return (
@@ -85,7 +85,7 @@ export const HomePageComponents = () => {
                     {featuresItem && <p> {featuresItem.description} </p>}
 
                     <div className="btns">
-                        <Button size='l' onClick={ () => handleClick(featuresItem.id) }>
+                        <Button size='l' onClick={ () => handleClickBuy(featuresItem) }>
                             <span className='text-button'> Adicionar </span>
                         </Button>
                         <button className='btn-GoToMenu'> Cardápio </button>

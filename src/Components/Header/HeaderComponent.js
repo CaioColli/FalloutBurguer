@@ -7,7 +7,7 @@ import pageLogo from '../../assets/PageIcon.svg'
 import { MenuBurguer } from './MenuBurguer/MenuBurguerComponent'
 import { ShoppingCartComponent } from './ShoppingCart/ShoppingCartComponent'
 
-export const HeaderComponent = ({ itemsInCart }) => {
+export const HeaderComponent = () => {
     const [size, setSize] = useState(false)
     const [showMenu, setShowMenu] = useState(false)
     const [showShoppingCart, setShowShoppingCart] = useState(false)
@@ -50,7 +50,7 @@ export const HeaderComponent = ({ itemsInCart }) => {
     return (
         <>
             {showMenu && <MenuBurguer onclose={clickCloseMenu}/>}
-            {showShoppingCart &&  <ShoppingCartComponent onClose={ clickCloseShoppingCart } items={ itemsInCart }/>}
+            {showShoppingCart &&  <ShoppingCartComponent onClose={ clickCloseShoppingCart } />}
 
             <div id='header-content' className='header-content' style={{ backgroundColor: size ? 'rgb(0,0,0,70%)' : 'transparent'}} >
                 
@@ -62,10 +62,10 @@ export const HeaderComponent = ({ itemsInCart }) => {
 
                 <nav>
                     <ul>
-                        <li><a href=''> MAIS PEDIDOS </a></li>
-                        <li><a href=''> CARNE </a></li>
-                        <li><a href=''> FRANGO </a></li>
-                        <li><a href=''> ACOMPANHAMENTOS </a></li>
+                        <li>MAIS PEDIDOS</li>
+                        <li>CARNE</li>
+                        <li>FRANGO</li>
+                        <li>ACOMPANHAMENTOS</li>
                     </ul>
                 </nav>
 

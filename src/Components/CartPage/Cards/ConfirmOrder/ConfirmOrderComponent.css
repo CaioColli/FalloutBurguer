@@ -1,0 +1,42 @@
+.order-content {
+    width: 100%;
+    margin-left: 120px;
+    div {
+        align-items: center;
+        display: flex;
+        gap: 48px;
+
+        p {
+            color: var(--white);
+            font-size: 24px;
+            font-weight: bold;
+            max-width: 230px;
+
+            span {
+                color: var(--green);
+            }
+        }
+        
+
+        button {
+            color: var(--white);
+            max-height: 50px;
+        }
+    }
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 800px)  {
+    .order-content {
+        margin: 0;
+
+        div {
+            justify-content: center;
+            gap: 0;
+            p {
+                max-width: 140px;
+                font-size: 18px;
+            }
+        }
+    }
+}

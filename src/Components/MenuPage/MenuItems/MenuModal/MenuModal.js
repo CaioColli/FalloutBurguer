@@ -1,26 +1,27 @@
 import './MenuModal.css'
 import { Modal } from "../../../Modal/ModalComponent"
 import vaultBoyHungry from '../../../../assets/VaultBoyHungry.svg'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { HiOutlineMinusSm } from "react-icons/hi";
 import { HiPlus } from "react-icons/hi";
 import { Button } from '../../../Buttons/Button';
 import { currencyFormat } from '../../../../Scripts/CurrencyFormat';
 import { ModalOverlay } from '../../../ModalOverlay/ModalOverlayComponent';
+import { Context } from '../../../../Context/Context';
 
-export const MenuModal = ({ item, onClose, onClickBuy}) => {
+export const MenuModal = ({ item, onClose }) => {
     const [count, setCount] = useState(1)
+    const { clickBuyItem } = useContext(Context)
+
+    const handleClickBuy = (item, quantity) => {
+        clickBuyItem(item, quantity)
+        onClose()
+    }
 
     if(!item) return null
 
     if (count === 0) {
         onClose()
-    }
-
-    const confirmOrder = (item) => {
-        onClose()
-        console.log(item)
-        onClickBuy(item)
     }
 
     const decrement = () => {
@@ -64,7 +65,7 @@ export const MenuModal = ({ item, onClose, onClickBuy}) => {
                                         readOnly/>
                                     <button className='quantify-buttons' onClick={ increment }> <HiPlus /> </button>
                                 </div>
-                                    <Button size='m' onClick={() => confirmOrder(item)}>
+                                    <Button size='m' onClick={() => handleClickBuy(item, count)}>
                                         Confirmar
                                     </Button>
                             </footer>
