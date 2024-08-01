@@ -195,6 +195,7 @@
                 .rightSide-items {
                     max-height: 575px;
                     align-items: start;
+                    overflow-x: scroll;
 
                     h2 {
                         font-size: 32px;
