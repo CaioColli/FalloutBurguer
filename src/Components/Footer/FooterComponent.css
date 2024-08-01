@@ -1,4 +1,105 @@
+.footerPage {
+    background-color: var(--darkBlue-background);
+    height: 100%;
+    width: 100%;
 
-@media screen and (min-width: 320px) and (max-width: 799px) {}
+    .footerContent {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: top;
+        justify-content: space-between;
+        padding: 30px 10%;
 
-@media screen and (min-width: 800px) and (max-width: 1280px) {}
+        img {
+            max-width: 200px;
+        }
+
+        .institutional {
+            h3 {
+                color: var(--white);
+                font-size: 32px;
+                font-weight: bold;
+                margin-bottom: 16px;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                li {
+                    all: unset;
+                    color: var(--gray);
+                }
+            }
+        }
+
+        .contact {
+            h3 {
+                color: var(--white);
+                font-size: 32px;
+                font-weight: bold;
+                margin-bottom: 16px;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                li {
+                    all: unset;
+                    color: var(--gray);
+
+                    div {
+                        display: flex;
+                        gap: 8px;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+
+        .socialMidia {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            h3 {
+                color: var(--white);
+                font-size: 32px;
+                font-weight: bold;
+            }
+
+            ul {
+                display: flex;
+                gap: 8px;
+
+                li {
+                    all: unset;
+                    color: var(--gray);
+                    font-size: 24px;
+                }
+            }
+
+            span {
+                font-size: 18px;
+                font-weight: bold;
+                color: var(--gray);
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .footerPage {
+        .footerContent {
+            justify-content: center;
+            gap: 48px;
+            img {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import { ButtonToTop } from "../Buttons/ButtonToTop"
+import { FooterComponent } from "../Footer/FooterComponent"
 import { HeaderComponent } from "../Header/HeaderComponent"
 import { HomePageComponents } from "../HomePage/HomePageComponent"
 import { LocationPage } from "../LocationPage/LocationPageComponent"
@@ -12,6 +13,7 @@ export const InitialPage = () => {
             <HomePageComponents />
             <LocationPage />
             <MenuPage />
+            <FooterComponent />
         </>
     )
 }

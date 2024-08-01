@@ -8,6 +8,7 @@ import { Button } from '../../../Buttons/Button';
 import { currencyFormat } from '../../../../Scripts/CurrencyFormat';
 import { ModalOverlay } from '../../../ModalOverlay/ModalOverlayComponent';
 import { Context } from '../../../../Context/Context';
+import Swal from 'sweetalert2';
 
 export const MenuModal = ({ item, onClose }) => {
     const [count, setCount] = useState(1)
@@ -16,6 +17,14 @@ export const MenuModal = ({ item, onClose }) => {
     const handleClickBuy = (item, quantity) => {
         clickBuyItem(item, quantity)
         onClose()
+
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Item adicionado ao carrinho!",
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 
     if(!item) return null

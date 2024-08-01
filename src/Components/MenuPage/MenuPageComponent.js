@@ -6,12 +6,8 @@ import { MeatMenuComponent } from './MenuItems/MeatMenu/MeatMenuComponent'
 import { MoreOrdersMenuComponent } from './MenuItems/MoreOrdersMenu/MoreOrdersMenuComponent'
 import { useEffect, useRef, useState } from 'react'
 
-export const MenuPage = ({ onClickBuy }) => {
+export const MenuPage = () => {
     const [width, setWidth] = useState()
-
-    const itemClicked = (item, quantity) => {
-        onClickBuy(item, quantity)
-    }
 
     const moreOrdersRef  = useRef()
     const meatRef   = useRef()

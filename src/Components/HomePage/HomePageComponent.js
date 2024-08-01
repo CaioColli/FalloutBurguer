@@ -9,6 +9,7 @@ import traceIcon from '../../assets/Trace.svg'
 import radiationIcon from '../../assets/RadiationIcon.svg'
 import shadowBurguer from '../../assets/shadow.svg'
 import { Context } from '../../Context/Context'
+import Swal from 'sweetalert2'
 gsap.registerPlugin(ScrollTrigger)
 
 export const HomePageComponents = () => {
@@ -29,7 +30,7 @@ export const HomePageComponents = () => {
         const animateElements = () => {
             setTimeout(() => {
                 const timeLine = gsap.timeline({ defaults: { duration: 1 } })
-        
+
                 const animation = timeLine.fromTo('.burguerImage', {
                     y: 60,
                     opacity: 0
@@ -57,7 +58,7 @@ export const HomePageComponents = () => {
                     y: 0,
                     opacity: 1
                 })
-        
+
                 ScrollTrigger.create({
                     trigger: '.homePage',
                     start: 'top center',
@@ -71,9 +72,17 @@ export const HomePageComponents = () => {
         animateElements()
         fetchData()
     }, [])
-    
+
     const handleClickBuy = (item, quantity = 1) => {
         clickBuyItem(item, quantity)
+
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Item adicionado ao carrinho!",
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 
     return (
@@ -85,7 +94,7 @@ export const HomePageComponents = () => {
                     {featuresItem && <p> {featuresItem.description} </p>}
 
                     <div className="btns">
-                        <Button size='l' onClick={ () => handleClickBuy(featuresItem) }>
+                        <Button size='l' onClick={() => handleClickBuy(featuresItem)}>
                             <span className='text-button'> Adicionar </span>
                         </Button>
                         <button className='btn-GoToMenu'> Cardápio </button>
@@ -95,13 +104,13 @@ export const HomePageComponents = () => {
             </div>
 
             <div className="rightSide-homePage">
-                <img src={ radiationIcon } className='radiationIcon-1'></img>
-                <img src={ radiationIcon } className='radiationIcon-2'></img>
+                <img src={radiationIcon} className='radiationIcon-1'></img>
+                <img src={radiationIcon} className='radiationIcon-2'></img>
                 <div className='content-rightSide'>
                     <div className="div-burguerImage">
 
                         <div className='container-price'>
-                            <img src={ traceIcon } alt="Traçado do hamburguer para o preço" className="traceBurguer"></img>
+                            <img src={traceIcon} alt="Traçado do hamburguer para o preço" className="traceBurguer"></img>
                             <div className='priceBurguer'>
                                 <div className='price'>
                                     <p>Apenas</p>
@@ -112,7 +121,7 @@ export const HomePageComponents = () => {
 
                         <div className='content-burguerImage'>
                             {featuresItem && <img src={featuresItem.image} alt="Foto de um hamburguer" className="burguerImage"></img>}
-                            <img src={ shadowBurguer } alt="Sombra do hamburguer" className="shadowBurguer"></img>
+                            <img src={shadowBurguer} alt="Sombra do hamburguer" className="shadowBurguer"></img>
                         </div>
                     </div>
                 </div>

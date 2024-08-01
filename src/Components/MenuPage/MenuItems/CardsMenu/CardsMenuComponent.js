@@ -7,6 +7,7 @@ import vaultBoy from '../../../../assets/MiniVaultBoy.svg'
 import { MenuModal } from '../MenuModal/MenuModal'
 import { useContext, useState } from 'react'
 import { Context } from '../../../../Context/Context'
+import Swal from 'sweetalert2'
 
 export const CardMenu = ({ data }) => {
     const [selectedItem, setSelectedItem] = useState(null)
@@ -15,6 +16,14 @@ export const CardMenu = ({ data }) => {
 
     const handleClickBuy = (item, quantity = 1) => {
         clickBuyItem(item, quantity)
+
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Item adicionado ao carrinho!",
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 
     const handleClickMoreInformation = (item) => {
@@ -34,7 +43,7 @@ export const CardMenu = ({ data }) => {
                         <li className="item" key={item.id}>
                             <div className='leftSide'>
                                 <div className='topSide'>
-                                    <img className="image" src={item.image} alt={`Imagem ${item.title}`}/>
+                                    <img className="image" src={item.image} alt={`Imagem ${item.title}`} />
                                     <h2 className="title"> {item.title} </h2>
                                 </div>
                                 <div className='bottomSide'>
@@ -60,7 +69,7 @@ export const CardMenu = ({ data }) => {
                 })}
             </ul>
 
-            {showModal && <MenuModal item={selectedItem} onClose={ clickCloseModal }/>}
+            {showModal && <MenuModal item={selectedItem} onClose={clickCloseModal} />}
         </>
     )
 }

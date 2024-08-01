@@ -86,17 +86,6 @@
             transition: 0.5s ease;
             width: 60px;
 
-            .icon-circle {
-                display: block;
-
-                fill: var(--red);
-                height: 11px;
-                position: absolute;
-                right: -2px;
-                top: -2px;
-                width: 11px;
-            }
-
             .icon-shoppingCart {
                 width: 40px;
                 height: 40px;
@@ -112,8 +101,6 @@
 @media screen and (max-width: 1279px) {
     .header-content {
         justify-content: space-between;
-        position: fixed;
-        /* width: 100%; */
 
         z-index: 20;
 
