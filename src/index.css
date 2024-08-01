@@ -25,13 +25,13 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
   background-color: var(--darkBlue-background);
-  
+
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--white);
   border-radius: 50px;
-  
+
 }
 
 /* Box Shopping Cart */
@@ -47,10 +47,30 @@ body::-webkit-scrollbar-track {
   margin: 16px 0;
 }
 
+@media screen and (max-width: 800px) {
+  .rightSide-items {
+    scrollbar-width: none;
+  }
+
+  .rightSide-items::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .content-modal::-webkit-scrollbar-track {
   margin: 8px 0;
 }
 
 .content-modal::-webkit-scrollbar {
   width: 5px;
+}
+
+@media screen and (max-width: 1280px) {
+  .menu-items {
+    scrollbar-width: none;
+  }
+
+  .menu-items::-webkit-scrollbar {
+    display: none;
+  }
 }

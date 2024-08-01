@@ -196,6 +196,7 @@
                     max-height: 575px;
                     align-items: start;
                     overflow-x: scroll;
+                    scrollbar-width: none;
 
                     h2 {
                         font-size: 32px;
